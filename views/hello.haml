@@ -1,0 +1,18 @@
+%h1 This is the Hello page
+
+%br
+
+- if @name.nil?
+  %form(accept-charset="UTF-8" action="/hello" method="post")
+    #form
+      %label(for="name") Name
+      %input(type="text" id="name" name="name")
+      %br
+      %br
+      %input(type="submit" value="Submit")
+- else
+  Hello
+  = @name
+  %br
+  %br
+  %a(href= '/hello') Back
